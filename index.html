@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Become a partner</h1>
+    <form id="form" action="">
+      <h3>Personal information</h3>
+
+      <div class="inputItem">
+        <label for="firstname">First name</label>
+        <input
+          placeholder="Enter your first name"
+          name="firstname"
+          type="text"
+        />
+      </div>
+
+      <div class="inputItem">
+        <label for="lastname">Last name</label>
+        <input placeholder="Enter your last name" name="lastname" type="text" />
+      </div>
+
+      <div class="inputItem">
+        <label for="email">Email</label>
+        <input required placeholder="Enter your email" name="email" type="email" />
+      </div>
+
+      <div class="inputItem">
+        <label for="phone">Phone number</label>
+        <input placeholder="Enter your number" name="phone" type="tel" />
+      </div>
+
+      <div class="inputItem">
+        <label for="logo">Your logo</label>
+        <div class="fileDiv">
+          <p>Select your logo</p>
+          <input class="file" name="logo" type="file" />
+          <img src="./assets/Vector.svg" alt="file.svg" />
+        </div>
+      </div>
+
+      <div class="inputItem">
+        <label for="description">Description</label>
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
+      </div>
+
+      <select class="select" name="category">
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+      </select>
+      <button type="submit">Send</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        console.log(Object.fromEntries(formData));
+      });
+    </script>
+  </body>
+</html>
